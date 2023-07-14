@@ -1,0 +1,111 @@
+<div class="container-fluid">
+    <h3 class="text-center text-primary">Angular Forms</h3>
+</div>
+
+<div class="container-fluid">
+
+    <div class="container card">
+        <h2>Registration Form</h2>
+        <form #regForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="firstName"><strong> First Name</strong></label>
+                        <input type="text" class="form-control form-control-lg"
+                            [class.is-invalid]="fname.touched&&fname.invalid" placeholder="First Name" name="fname"
+                            #fname="ngModel" [(ngModel)]="userModel.fname" required="" />
+                        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">Name is
+                            Required</small>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="lastName"><strong>Last Name</strong></label>
+                        <input type="text" class="form-control form-control-lg"
+                            [class.is-invalid]="lname.touched&&lname.invalid" placeholder="Last Name" name="lname"
+                            #lname="ngModel" [(ngModel)]="userModel.lname" required />
+                        <small class="text-danger" [class.d-none]="lname.valid || lname.untouched">Name is
+                            Required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="email"><strong>Email</strong></label>
+                        <input type="email" class="form-control form-control-lg"
+                            [class.is-invalid]="email.touched && email.invalid"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Emali-id" name="email"
+                            #email="ngModel" [(ngModel)]="userModel.email" required />
+                        <div *ngIf="email.errors && (email.touched || email.invalid)">
+                            <small class="text-danger" *ngIf="email.errors?.['required']">Email is Required</small>
+                            <small class="text-danger" *ngIf="email.errors?.['pattern']">Email is Invalid</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="mobile"><strong>Mobile Number</strong></label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Phone Number" id="mobile"
+                            name="mobile" #mobile="ngModel" [(ngModel)]="userModel.mobile"
+                            [class.is-invalid]="mobile.touched&&mobile.invalid" maxlength="10"
+                            pattern="^((\\+91-?)|0)?[0-9]{10}$" required />
+                        <small class="text-danger" [class.d-none]="mobile.valid || mobile.untouched">Enter Your Mobile
+                            Number</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="dob"><strong>Date of Birth</strong></label>
+                        <input type="date" class="form-control form-control-lg"
+                            [class.is-invalid]="dob.touched && dob.invalid" name="dob" #dob="ngModel"
+                            [(ngModel)]="userModel.dob" required />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h6><strong>Gender</strong></h6>
+                    <input type="radio" name="gender" value="Female" #gender="ngModel"
+                        [(ngModel)]="userModel.gender" />&nbsp;
+                    <label for="femaleGender">Female</label>&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" value="Male" #gender="ngModel"
+                        [(ngModel)]="userModel.gender" />&nbsp;
+                    <label for="maleGender">Male</label>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <label for="courses"><strong>Courses</strong></label>
+                    <select (blur)="validateCourse(course.value)" (change)="validateCourse(course.value)"
+                        class="select form-control form-control-lg" [class.is-invalid]="course.touched && courseError "
+                        name="course" #course="ngModel" [(ngModel)]="userModel.course" required>
+                        <option value="default">--select course--</option>
+                        <option *ngFor="let c of courses">{{ c }}</option>
+                    </select>
+                    <small class="text-danger" [class.d-none]="!courseError || course.untouched">Choose Any
+                        Course</small>
+                </div>
+                <div class="col-sm-6"><br><br>
+                    <div class="justify-content-center">
+                        <input type="checkbox" name="tc" #tc="ngModel" [class.is-invalid]="tc.touched&&tc.invalid"
+                            [(ngModel)]="userModel.tc">&nbsp;
+                        <label class="form-label" for="tc">Accept Terms and Conditions</label>
+                        <small class="text-danger" [class.d-none]="tc.invalid || tc.untouched">Accept T&C </small>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 pt-2" align="center">
+                <button type="submit" class="btn btn-warning btn-lg" value="Register"
+                    [disabled]="regForm.form.invalid || courseError">Register</button>
+            </div><br>
+        </form>
+        <!-- <div class="regformdata">
+            {{regForm.value | json }}
+        </div>
+
+        <div class="regformdata">
+            {{userModel | json }}
+        </div> -->
+    </div><br><br>
+</div>

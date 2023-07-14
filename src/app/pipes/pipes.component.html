@@ -1,0 +1,28 @@
+<div class="container-fluid"><br>
+    <div class="container">
+        <h3>PIPES In ANGULAR</h3>
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <h5> <span class="text-primary">{{name}}</span></h5>
+                Lowercase
+                <h5> {{name | lowercase}}</h5>
+                Uppercase
+                <h5> {{name | uppercase}}</h5>
+                Titlecase
+                <h5> {{name | titlecase}}</h5>
+                Slice
+                <h5> {{name | slice:8}}</h5>
+                Percent
+                <h5> {{20.66 | percent}}</h5>
+                Currency in $
+                <h5> {{20 | currency}}</h5>
+                Currency in INR
+                <h5> {{20 | currency: 'INR'}}</h5><br>
+            </div>
+            <div class="col-sm-6">
+                <h5>Pipes</h5>
+                <img class="img-responsive" src="assets/pipes.png" alt="Advertisement" width="100%" height="380">
+            </div>
+        </div>
+    </div>
+</div>

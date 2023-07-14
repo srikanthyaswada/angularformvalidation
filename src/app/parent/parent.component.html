@@ -1,0 +1,5 @@
+<div>
+    <h3 class="text-center text-primary">Parent Works...!</h3><br>
+</div>
+<app-child (childInfo)="msg=$event" [fromParent]="parentData"></app-child><br>
+<h2>{{msg}}</h2>

@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="mt-3">
+        <h3 class="text-center">Component Communication</h3>
+    </div>
+    <div class="mt-3">
+        <h4> Components are the building blocks of Angular. So we need to understand how components communicate with
+            each
+            other.
+        </h4>
+    </div>
+
+
+    <h3>There are three ways:</h3>
+    <ol>
+        <li> parent to child - sharing data via input decorator </li>
+        <li>child to parent - sharing data via output decorator and EventEmitter</li>
+    </ol>
+
+    <h5>Sharing data between child and parent directives and components</h5><br>
+    <p>A common pattern in Angular is sharing data between a parent component and child components.
+        Using Below pattern with the @Input() and @Output() decorators.</p>
+
+
+
+
+
+    <P> @Input() and @Output() give a child component a way to communicate with its parent component. @Input() lets a
+        parent component update data in the child component. Conversely, @Output() lets the child send data to a parent
+        component.</P>
+
+
+    <h4> Sending data from Parent Component to a Child Component</h4>
+    <p> The @Input() decorator in a child component or directive signifies that the property can receive its value from
+        its parent component.</p>
+
+    <p> Input data flow diagram of data flowing from parent to child
+        To use @Input(), you must configure the parent and child.</p>
+    <div class="card">
+        <img class="img-responsive" src="assets/input.svg" alt="Advertisement" width="100%" height="200">
+    </div>
+    <br>
+    <h4> Sending data from Child Component to a Parent Component</h4>
+    <p> The @Output() decorator in a child component or directive lets data flow from the child to the parent.</p>
+
+    <p> Output diagram of the data flow going from child to parent</p>
+    <p> @Output() marks a property in a child component as a doorway through which data can travel from the child to the
+        parent.</p>
+
+    <p> The child component uses the @Output() property to raise an event to notify the parent of the change. To raise
+        an event, an @Output() must have the type of EventEmitter, which is a class in @angular/core that you use to
+        emit custom events.</p>
+
+    <div class="card">
+        <img class="img-responsive" src="assets/output.svg" alt="Advertisement" width="100%" height="200">
+    </div><br>
+</div>

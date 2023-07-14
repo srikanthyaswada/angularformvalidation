@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <br><br>
+    <h4>ngIf Directive</h4>
+    <div class="card text-center">
+        <h5 *ngIf="sample">ngIf {{ sample }} for Angular App when (true)</h5>
+        <h5 *ngIf="sample">{{ sample }} for Angular App when (false)</h5>
+    </div>
+
+    <h4>ngSwitch Directive</h4>
+    <div class="card text-center text-danger">
+        <div [ngSwitch]="myswitch">
+            <div class="switch">
+                <div *ngSwitchCase="'abc' ">
+                    <h5>Angular abc</h5>
+                </div>
+                <div *ngSwitchCase="'123' ">
+                    <h5>Angular 123</h5>
+                </div>
+                <div *ngSwitchDefault=" ">
+                    <h5>Angular Default</h5>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+
+    <h4>ngFor Directive</h4>
+    <div class="card text-center">
+        <h4>ngFor Directive as index</h4>
+        <div class="text-primary" *ngFor="let n of navlinks; index as i">
+            <h5> {{i+1}} {{n}}</h5>
+        </div>
+
+        <h4>ngFor Directive as first</h4>
+        <div *ngFor="let n of navlinks; first as f">
+            <h5> <span class="text-danger">{{f}}</span> {{n}}</h5>
+        </div>
+
+        <h4>ngFor Directive as last</h4>
+        <div *ngFor="let n of navlinks; last as l">
+            <h5> <span class="text-danger">{{l}}</span> {{n}}</h5>
+        </div>
+
+        <h4>ngFor Directive as even</h4>
+        <div *ngFor="let n of navlinks; even as e">
+            <h5><span class="text-danger">{{e}}</span> {{n}}</h5>
+        </div>
+
+        <h4>ngFor Directive as odd</h4>
+        <div *ngFor="let n of navlinks; odd as o">
+            <h5><span class="text-danger">{{o}}</span> {{n}}</h5>
+        </div>
+    </div><br><br>
+</div>

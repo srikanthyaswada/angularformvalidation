@@ -1,0 +1,8 @@
+li {
+  list-style-type: none;
+}
+.border th,
+tr,
+td {
+  border: 2px solid;
+}

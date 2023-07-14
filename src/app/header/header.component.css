@@ -1,0 +1,17 @@
+h1 {
+  font-size: 40px;
+  padding: 10px;
+  font-family: "Gill Sans";
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+.rf {
+  margin-top: 15px;
+}
+.lf {
+  margin-top: 15px;
+}
+.btn {
+  border-radius: 25px;
+}

@@ -1,0 +1,73 @@
+<h1 class="text-center">Data Bindings</h1>
+<h2>Types of data binding in angular</h2>
+<div>
+    <ol>
+        <li>Interpolation</li>
+        <li>Property binding</li>
+        <li>Class binding</li>
+        <li>Style binding</li>
+        <li>Attribute binding</li>
+        <li>Event binding </li>
+        <li>Two-way binding</li>
+    </ol>
+</div><br>
+<div>
+    <h4>Interpolation or String-Interpolation</h4><br>
+    <span class="text-primary sy">Syntax :</span>
+    <span class="text-danger sy">{{ Property Name<span>}}</span></span><br>
+
+    <h5>Examples :</h5>
+    <div class="card container">
+        <p>Hi <span class="text-success"><b>{{ employee.name }}</b></span> Welcome to Angular App</p>
+        <p> Name : <span class="text-success"><b>{{ employee.name }}</b></span></p>
+        <p> Mobile : <span class="text-success"><b>{{ employee.mobile }}</b></span></p>
+        <p> Email-id : <span class="text-success"><b>{{ employee.email }}</b></span></p>
+    </div><br>
+</div>
+
+<div>
+    <h4>Property Binding</h4><br>
+    <span class="text-primary sy">Syntax :</span>
+    <span class="text-danger sy"> [Property Name]="variable" <span></span></span><br>
+    <h5>Examples :</h5>
+
+    <div>
+        <input type="text" [disabled]="value1" value="Srikanth"><br><br>
+        <input type="text" [disabled]="value2" value="Srikanth"><br><br><br>
+    </div>
+</div>
+
+<div>
+    <h4>Class Binding</h4><br>
+    <span class="text-primary sy">Syntax :</span>
+    <span class="text-danger sy"> [class]="myClass" <span></span></span><br>
+    <h5>Examples :</h5><br>
+    <p>Vita Technologies</p>
+    <p [class]="myClass1">Vita Technologies</p>
+    <p [class]="myClass2">Vita Technologies</p>
+</div>
+
+<div>
+    <h4>Style Binding</h4><br>
+    <span class="text-primary sy">Syntax :</span>
+    <span class="text-danger sy"> [style.color]="'blue'" <span></span></span><br>
+    <span class="text-primary sy">Syntax :</span>
+    <span class="text-danger sy"> [style.text-align]="'center'" <span></span></span><br>
+    <h5>Examples :</h5><br>
+    <p>Vita Technologies</p>
+    <p [style.color]="'green'">Vita Technologies</p>
+    <p [style.color]="mycolor">Vita Technologies</p>
+    <p [style.text-align]="'center'">Vita Technologies</p>
+</div>
+
+
+
+
+<h4>Two Way Data Binding</h4><br>
+<h5>Example :</h5>
+<div class="text-center">
+    <b>Enter your Name:</b><input [(ngModel)]="data" type="text">
+</div>
+<br>
+<p>{{ data }}</p>
+<br><br><br>
